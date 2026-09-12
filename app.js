@@ -12,7 +12,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
-const MongoStore = require("connect-mongo");
+const {MongoStore} = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -73,7 +73,7 @@ const sessionOptions = {
     resave: false,
     saveUninitialized: true,
     cookie: {
-        exprires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+        expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
         maxAge: 7 * 24 * 60 * 60 * 1000,
         httpOnly:true,
     }
